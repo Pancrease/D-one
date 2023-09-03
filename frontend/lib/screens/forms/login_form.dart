@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/Onboarding.dart';
 import 'package:flutter_application_1/screens/menu.dart';
-import 'package:flutter_application_1/screens/LogupPage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:flutter_application_1/screens/Setting.dart';
 import 'package:flutter_application_1/screens/UploadImg.dart';
-import 'Google_sign_in.dart';
-import 'package:flutter_application_1/Widgets/uploadimageWid.dart';
 
 // import 'package:keyboard_visibility/keyboard_visibility.dart';
 
@@ -26,20 +21,18 @@ class _LoginFormState extends State<LoginForm> {
   var msgpasse = "";
 
   bool _isVisible = true;
-  bool _BoxVisible = false;
 
-  GlobalKey<FormState> _numberForm = GlobalKey();
+  final GlobalKey<FormState> _numberForm = GlobalKey();
   bool passwordVisible = true;
   bool _keyboardVisible = false;
 
-  @override
   void showToast() {
     setState(() {
-      _BoxVisible = true;
       _isVisible = true;
     });
   }
 
+  // ignore: non_constant_identifier_names
   void HideToast() {
     setState(() {
       _isVisible = false;
@@ -49,7 +42,6 @@ class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
     _keyboardVisible = MediaQuery.of(context).viewInsets.bottom == 0;
-    print(_keyboardVisible);
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -57,7 +49,7 @@ class _LoginFormState extends State<LoginForm> {
       },
       child: Center(
         child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -86,7 +78,7 @@ class _LoginFormState extends State<LoginForm> {
                   ),
                 ),
               ),
-              Visibility(
+              const Visibility(
                   visible: true,
                   child: SizedBox(
                     height: 50,
@@ -133,8 +125,9 @@ class _LoginFormState extends State<LoginForm> {
                                 validator: (val) {
                                   if (val!.isEmpty) return "complet Email";
                                   if (!val.contains("@")) return "Set Email";
+                                  return null;
                                 },
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   hintStyle: TextStyle(fontSize: 20),
                                   border: InputBorder.none,
                                   icon: Icon(Icons.email_outlined),
@@ -154,13 +147,15 @@ class _LoginFormState extends State<LoginForm> {
                                 controller: msgpass,
                                 validator: (val) {
                                   if (val!.isEmpty) return "Set Password";
-                                  if (val.length < 8)
+                                  if (val.length < 8) {
                                     return "Password must be at least 8 characters";
+                                  }
+                                  return null;
                                 },
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintStyle: TextStyle(fontSize: 22),
-                                  icon: Icon(Icons.lock_outline_rounded),
+                                  hintStyle: const TextStyle(fontSize: 22),
+                                  icon: const Icon(Icons.lock_outline_rounded),
                                   hintText: "Password",
                                   suffixIcon: IconButton(
                                     icon: Icon(passwordVisible
@@ -190,7 +185,7 @@ class _LoginFormState extends State<LoginForm> {
                         decoration: BoxDecoration(
                           boxShadow: [
                             BoxShadow(
-                              color: Color.fromARGB(255, 4, 84, 134)!
+                              color: const Color.fromARGB(255, 4, 84, 134)
                                   .withOpacity(0.5),
                               spreadRadius: 5,
                               blurRadius: 7,
@@ -220,7 +215,7 @@ class _LoginFormState extends State<LoginForm> {
                               );
                             }
                           },
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.arrow_forward_ios_outlined,
                             color: Colors.white,
                             size: 32,
@@ -294,7 +289,7 @@ class _LoginFormState extends State<LoginForm> {
                             Image(
                               height: 45,
                               width: 45,
-                              image: AssetImage('assets/fb.png'),
+                              image: const AssetImage('assets/fb.png'),
                             ),
                             const SizedBox(width: 24),
                             GestureDetector(
@@ -302,25 +297,19 @@ class _LoginFormState extends State<LoginForm> {
                                 try {
                                   final GoogleSignInAccount? googleUser =
                                       await _googleSignIn.signIn();
-                                  final GoogleSignInAuthentication? googleAuth =
-                                      await googleUser?.authentication;
-
-                                  print(
-                                      'Google User: ${googleUser?.displayName}');
-                                  print(
-                                      'Google Auth: ${googleAuth?.accessToken}');
-
                                   if (googleUser?.displayName != null) {
+                                    // ignore: use_build_context_synchronously
                                     Navigator.pushNamed(context, 'menu');
                                   }
 
                                   // Now that we have the user's Google account, we can use it to sign in to your own app
                                   // For example, you could use the Google account to sign in to Firebase
                                 } catch (error) {
+                                  // ignore: avoid_print
                                   print(error);
                                 }
                               },
-                              child: Image(
+                              child: const Image(
                                   height: 45,
                                   width: 45,
                                   image: AssetImage('assets/google.png')),
@@ -350,7 +339,7 @@ class _LoginFormState extends State<LoginForm> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => UploadImgPage(),
+                                        builder: (context) => const UploadImgPage(),
                                       ),
                                     );
                                   },

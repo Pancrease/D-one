@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Widgets/bottombar2.dart';
-import 'package:flutter_application_1/Widgets/Slide.dart';
+import 'package:flutter_application_1/Widgets/slide.dart';
 import 'package:flutter_application_1/screens/menu.dart';
 
 class SetteingPage extends StatefulWidget {

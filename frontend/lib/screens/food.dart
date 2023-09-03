@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_1/screens/yum.dart';
 
 class Food extends StatefulWidget {
@@ -224,11 +222,10 @@ class _FoodState extends State<Food> {
       ]
     },
   );
+  // ignore: non_constant_identifier_names
   List FoodItems = [];
   @override
   Widget build(BuildContext context) {
-    var searchQuery = new TextEditingController();
-
     void updateSearchQuery(String newQuery) {
       setState(() {
         FoodItems = yum.foodItems!
@@ -238,87 +235,66 @@ class _FoodState extends State<Food> {
             .toList();
       });
     }
-
-    var length = FoodItems!.length;
-    void initState() {
-      super.initState();
-
-      // Start listening to changes.
-      editingController
-          .addListener((() => updateSearchQuery(editingController.text)));
-    }
-
-    @override
-    void dispose() {
-      // Clean up the controller when the widget is removed from the widget tree.
-      // This also removes the _printLatestValue listener.
-      editingController.dispose();
-      super.dispose();
-    }
-
     // ignore: unnecessary_new
     return new Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: new AppBar(),
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.fromLTRB(8, 30, 8, 8),
-              child: Column(
-                children: [
-                  Text(
-                    "What are you craving?",
-                    style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Roboto',
-                        color: Color.fromARGB(255, 34, 80, 133)),
-                  ),
-                  SizedBox(height: 10),
-                  TextField(
-                    onChanged: ((value) {
-                      updateSearchQuery(value);
-                      print(FoodItems!.length.toString() + "lwala");
-                    }),
-                    controller: editingController,
-                    decoration: InputDecoration(
-                        labelText: "Search",
-                        hintText: "Search",
-                        prefixIcon: Icon(Icons.search),
-                        border: OutlineInputBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(25.0)))),
-                  ),
-                  SizedBox(height: 20),
-                  Container(
-                    height: MediaQuery.of(context).size.height * 0.5,
-                    child: FoodItems.length == 0
-                        ? Center(
-                            child: Text(
-                              "Search for a food",
-                              style: TextStyle(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Roboto',
-                                  color: Color.fromARGB(255, 34, 80, 133)),
-                            ),
-                          )
-                        : ListView.builder(
-                            itemCount: FoodItems.length,
-                            itemBuilder: (context, index) {
-                              return ListTile(
-                                title: Text(FoodItems[index].foodName),
-                                subtitle:
-                                    Text(FoodItems[index].calories.toString()),
-                              );
-                            }),
-                  ),
-                ],
-              ),
+      appBar: AppBar(),
+      body: Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8, 30, 8, 8),
+            child: Column(
+              children: [
+                const Text(
+                  "What are you craving?",
+                  style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Roboto',
+                      color: Color.fromARGB(255, 34, 80, 133)),
+                ),
+                const SizedBox(height: 10),
+                TextField(
+                  onChanged: ((value) {
+                    updateSearchQuery(value);
+                  }),
+                  controller: editingController,
+                  decoration: const InputDecoration(
+                      labelText: "Search",
+                      hintText: "Search",
+                      prefixIcon: Icon(Icons.search),
+                      border: OutlineInputBorder(
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(25.0)))),
+                ),
+                const SizedBox(height: 20),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.5,
+                  child: FoodItems.isEmpty
+                      ? const Center(
+                          child: Text(
+                            "Search for a food",
+                            style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Roboto',
+                                color: Color.fromARGB(255, 34, 80, 133)),
+                          ),
+                        )
+                      : ListView.builder(
+                          itemCount: FoodItems.length,
+                          itemBuilder: (context, index) {
+                            return ListTile(
+                              title: Text(FoodItems[index].foodName),
+                              subtitle:
+                                  Text(FoodItems[index].calories.toString()),
+                            );
+                          }),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

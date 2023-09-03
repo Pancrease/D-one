@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_1/Widgets/uploadimageWid.dart';
 import 'package:flutter_application_1/screens/LogupPage.dart';
-import 'package:flutter_application_1/screens/forms/LogupForm.dart';
+import 'package:flutter_application_1/screens/forms/logupform.dart';
 import 'package:flutter_application_1/screens/menu.dart';
 import 'package:flutter_application_1/screens/verify.dart';
 

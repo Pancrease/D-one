@@ -1,27 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/add_menu.dart';
 import 'package:flutter_application_1/screens/menu.dart';
-import 'package:flutter_application_1/screens/LoginPage.dart';
-import 'package:flutter/material.dart';
-import 'LoginPage.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_application_1/screens/menu.dart';
+import 'package:flutter_application_1/screens/loginpage.dart';
 import 'package:flutter_application_1/screens/Onboarding.dart';
 
-class home extends StatefulWidget {
-  const home({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
   @override
-  State<home> createState() => _homeState();
+  State<Home> createState() =>  HomeState();
 }
 
-class _homeState extends State<home> {
+class HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         routes: {
           "menu": (context) => menu(),
-          "add": (context) => add(),
-          "login": (context) => LoginPage(),
+          "add": (context) => const Add(),
+          "login": (context) => const LoginPage(),
         },
         debugShowCheckedModeBanner: false,
         title: 'D-one',
@@ -29,6 +25,6 @@ class _homeState extends State<home> {
           primarySwatch: Colors.blue,
         ),
         //MATBDLOHACH GHIR DKHL W DIR NEXT NEXT....
-        home: Onboarding());
+        home: const Onboarding());
   }
 }

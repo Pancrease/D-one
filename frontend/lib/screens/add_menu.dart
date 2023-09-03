@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Widgets/appbar.dart';
 import 'package:flutter_application_1/Widgets/back_button.dart';
@@ -16,22 +18,22 @@ String generateRandomString(int len) {
       List.generate(len, (index) => r.nextInt(33) + 89));
 }
 
-class add extends StatefulWidget {
-  const add({super.key});
+class Add extends StatefulWidget {
+  const Add({super.key});
 
   @override
-  State<add> createState() => _addState();
+  State<Add> createState() => _AddState();
 }
 
-class _addState extends State<add> {
+class _AddState extends State<Add> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: CustomAppBar(
-            title: 'add', backgroundColor: Color.fromRGBO(250, 250, 250, 1)),
-        drawer: Drawer(
+            title: 'add', backgroundColor: const Color.fromRGBO(250, 250, 250, 1)),
+        drawer: const Drawer(
           child: drawer(),
         ),
         bottomNavigationBar: bottonbar(),
@@ -49,33 +51,32 @@ class _addState extends State<add> {
               child: GridView.count(
                 shrinkWrap: true,
                 crossAxisCount: 2,
-                padding: EdgeInsets.all(40.0),
+                padding: const EdgeInsets.all(40.0),
                 crossAxisSpacing: 10.0,
                 mainAxisSpacing: 10.0,
                 children: <Widget>[
                   FloatingActionButton(
                     heroTag: generateRandomString(5),
                     onPressed: () {
-                      print('to food');
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Food()));
+                          MaterialPageRoute(builder: (context) => const Food()));
                     },
                     shape: const StadiumBorder(
                         side: BorderSide(color: Colors.blue, width: 4)),
                     child: Container(
-                      child: Image(image: AssetImage('assets/Food.png')),
+                      child: const Image(image: AssetImage('assets/Food.png')),
                       decoration: BoxDecoration(
                         color: Colors.transparent,
-                        borderRadius: BorderRadius.all(
+                        borderRadius: const BorderRadius.all(
                           Radius.circular(100),
                         ),
                         boxShadow: [
                           BoxShadow(
-                            color: Color.fromARGB(255, 100, 100, 100)
+                            color: const Color.fromARGB(255, 100, 100, 100)
                                 .withOpacity(0.1),
                             spreadRadius: 10,
                             blurRadius: 10,
-                            offset: Offset(3, 5),
+                            offset: const Offset(3, 5),
                           ),
                         ],
                       ),
@@ -86,25 +87,24 @@ class _addState extends State<add> {
                     heroTag: generateRandomString(7),
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Sport()));
-                      print('to sport');
+                          MaterialPageRoute(builder: (context) => const Sport()));
                     },
                     shape: const StadiumBorder(
                         side: BorderSide(color: Colors.indigo, width: 4)),
                     child: Container(
-                      child: Image(image: AssetImage('assets/Sport.png')),
+                      child: const Image(image: AssetImage('assets/Sport.png')),
                       decoration: BoxDecoration(
                         color: Colors.transparent,
-                        borderRadius: BorderRadius.all(
+                        borderRadius: const BorderRadius.all(
                           Radius.circular(100),
                         ),
                         boxShadow: [
                           BoxShadow(
-                            color: Color.fromARGB(255, 100, 100, 100)
+                            color: const Color.fromARGB(255, 100, 100, 100)
                                 .withOpacity(0.1),
                             spreadRadius: 10,
                             blurRadius: 10,
-                            offset: Offset(3, 5),
+                            offset: const Offset(3, 5),
                           ),
                         ],
                       ),
@@ -115,24 +115,24 @@ class _addState extends State<add> {
                     heroTag: generateRandomString(10),
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => bloodtest()));
+                          MaterialPageRoute(builder: (context) => const Bloodtest()));
                     },
                     shape: const StadiumBorder(
                         side: BorderSide(color: Colors.red, width: 4)),
                     child: Container(
-                      child: Image(image: AssetImage('assets/Blood.png')),
+                      child: const Image(image: AssetImage('assets/Blood.png')),
                       decoration: BoxDecoration(
                         color: Colors.transparent,
-                        borderRadius: BorderRadius.all(
+                        borderRadius: const BorderRadius.all(
                           Radius.circular(100),
                         ),
                         boxShadow: [
                           BoxShadow(
-                            color: Color.fromARGB(255, 100, 100, 100)
+                            color: const Color.fromARGB(255, 100, 100, 100)
                                 .withOpacity(0.1),
                             spreadRadius: 10,
                             blurRadius: 10,
-                            offset: Offset(3, 5),
+                            offset: const Offset(3, 5),
                           ),
                         ],
                       ),
@@ -142,26 +142,25 @@ class _addState extends State<add> {
                   FloatingActionButton(
                     heroTag: generateRandomString(12),
                     onPressed: () {
-                      print('to injection');
                     },
                     shape: const StadiumBorder(
                         side: BorderSide(color: Colors.green, width: 4)),
                     child: Container(
-                      child: Image(
+                      child: const Image(
                         image: AssetImage('assets/Needle.png'),
                       ),
                       decoration: BoxDecoration(
                         color: Colors.transparent,
-                        borderRadius: BorderRadius.all(
+                        borderRadius: const BorderRadius.all(
                           Radius.circular(100),
                         ),
                         boxShadow: [
                           BoxShadow(
-                            color: Color.fromARGB(255, 100, 100, 100)
+                            color: const Color.fromARGB(255, 100, 100, 100)
                                 .withOpacity(0.1),
                             spreadRadius: 10,
                             blurRadius: 10,
-                            offset: Offset(3, 5),
+                            offset: const Offset(3, 5),
                           ),
                         ],
                       ),
