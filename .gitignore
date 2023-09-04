@@ -56,6 +56,6 @@ web/flutter_service_worker.js
 .DS_Store
 .dart_tool/
 /*.code-workspace
-
 # Dependency lock files
 pubspec.lock
+/BackEnd/.env
