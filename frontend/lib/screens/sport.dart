@@ -38,7 +38,7 @@ class _SportState extends State<Sport> {
           drawer: const Drawer(
             child: drawer(),
           ),
-          bottomNavigationBar: bottonbar(),
+          bottomNavigationBar: Bottonbar(),
           body: Stack(
             children: [
               Positioned(
