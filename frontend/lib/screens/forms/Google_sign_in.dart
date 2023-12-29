@@ -1,14 +1,18 @@
+// ignore_for_file: file_names, unused_import, camel_case_types, library_private_types_in_public_api, use_build_context_synchronously, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/menu.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'Google_sign_in.dart';
 
-class google_sign_in extends StatefulWidget {
+class Google_sign_in extends StatefulWidget {
+  const Google_sign_in({super.key});
+
   @override
-  _google_sign_inState createState() => _google_sign_inState();
+  _Google_sign_inState createState() => _Google_sign_inState();
 }
 
-class _google_sign_inState extends State<google_sign_in> {
+class _Google_sign_inState extends State<Google_sign_in> {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   @override
@@ -16,21 +20,18 @@ class _google_sign_inState extends State<google_sign_in> {
     return Scaffold(
       body: Center(
         child: ElevatedButton(
-          child: Text('Sign in with Google'),
+          child: const Text('Sign in with Google'),
           onPressed: () async {
             try {
               final GoogleSignInAccount? googleUser =
                   await _googleSignIn.signIn();
+              // ignore: unused_local_variable
               final GoogleSignInAuthentication? googleAuth =
                   await googleUser?.authentication;
-
-              print('Google User: ${googleUser?.displayName}');
-              print('Google Auth: ${googleAuth?.accessToken}');
-
               if (googleUser?.displayName != null) {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => menu()),
+                  MaterialPageRoute(builder: (context) => const Menu()),
                 );
               }
 

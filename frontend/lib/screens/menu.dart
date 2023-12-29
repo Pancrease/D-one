@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field, prefer_final_fields, unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Widgets/appbar.dart';
 import 'package:flutter_application_1/Widgets/bottombar2.dart';
@@ -6,15 +8,15 @@ import 'package:flutter_application_1/screens/Menus_Screen/menu1.dart';
 import 'package:flutter_application_1/screens/Menus_Screen/menu2.dart';
 import 'package:horizontal_center_date_picker/datepicker_controller.dart';
 
-class menu extends StatefulWidget {
-  String? UserName;
-  menu({this.UserName});
+class Menu extends StatefulWidget {
+  final String? userName;
+  const Menu({super.key, this.userName});
 
   @override
-  State<menu> createState() => _menuState();
+  State<Menu> createState() => _MenuState();
 }
 
-class _menuState extends State<menu> {
+class _MenuState extends State<Menu> {
   List<String> items = ["Daily", "Average"];
   int pos0 = 0;
   int pos1 = 1;
@@ -23,32 +25,29 @@ class _menuState extends State<menu> {
   @override
   Widget build(BuildContext context) {
     var now = DateTime.now();
-    DateTime startDate = now.subtract(Duration(days: 14));
-    DateTime endDate = now.add(Duration(days: 0));
-    print("menu");
-    print('startDate = $startDate ; endDate = $endDate');
-    print(widget.UserName);
+    DateTime startDate = now.subtract(const Duration(days: 14));
+    DateTime endDate = now.add(const Duration(days: 0));
     // print('startDate = $startDate ; endDate = $endDate');
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: CustomAppBar(
           title: 'menu',
-          backgroundColor: Color.fromRGBO(250, 250, 250, 1),
+          backgroundColor: const Color.fromRGBO(250, 250, 250, 1),
         ),
         drawer: const Drawer(
           child: drawer(),
         ),
-        bottomNavigationBar: bottonbar(
-          UserName: widget.UserName,
+        bottomNavigationBar: Bottonbar(
+          userName: widget.userName,
         ),
         body: Center(
           child: Container(
-            margin: EdgeInsets.only(left: 20, right: 20),
+            margin: const EdgeInsets.only(left: 20, right: 20),
             height: (MediaQuery.of(context).size.height) / 1.67,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 255, 255, 255),
+              color: const Color.fromARGB(255, 255, 255, 255),
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
                 BoxShadow(
@@ -80,19 +79,19 @@ class _menuState extends State<menu> {
                           // padding: EdgeInsets.only(top: 20),
                           decoration: BoxDecoration(
                             // border: Border(left: pos0==i)
-                            color: Color.fromARGB(255, 255, 255, 255),
+                            color: const Color.fromARGB(255, 255, 255, 255),
                             borderRadius: BorderRadius.only(
                               topLeft: pos0 == index
-                                  ? Radius.circular(20)
-                                  : Radius.circular(0),
+                                  ? const Radius.circular(20)
+                                  : const Radius.circular(0),
                               topRight: pos1 == index
-                                  ? Radius.circular(20)
-                                  : Radius.circular(0),
+                                  ? const Radius.circular(20)
+                                  : const Radius.circular(0),
                             ),
                             border: current == index
                                 ? null
                                 : Border.all(
-                                    color: Color.fromARGB(255, 219, 218, 218),
+                                    color: const Color.fromARGB(255, 219, 218, 218),
                                     width: 2),
                           ),
                           child: Center(
@@ -101,8 +100,8 @@ class _menuState extends State<menu> {
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: current == index
-                                    ? Color.fromARGB(255, 6, 80, 141)
-                                    : Color.fromARGB(255, 102, 102, 102),
+                                    ? const Color.fromARGB(255, 6, 80, 141)
+                                    : const Color.fromARGB(255, 102, 102, 102),
                                 fontSize: 20,
                                 fontFamily: "Roboto",
                                 fontWeight: FontWeight.w500,
@@ -115,10 +114,10 @@ class _menuState extends State<menu> {
                   ),
                 ),
                 Container(
-                  child: pos0 == current ? menu1() : null,
+                  child: pos0 == current ? const menu1() : null,
                 ),
                 Container(
-                  child: pos1 == current ? menu2() : null,
+                  child: pos1 == current ? const menu2() : null,
                 )
               ],
             ),

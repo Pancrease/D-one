@@ -1,3 +1,4 @@
+// ignore_for_file: unused_import
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/Widgets/appbar.dart';
@@ -9,10 +10,10 @@ import 'package:flutter_application_1/screens/menu.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'dart:math';
 
-class bloodtest extends StatefulWidget {
-  bloodtest({super.key});
+class Bloodtest extends StatefulWidget {
+  const Bloodtest({super.key});
   @override
-  State<bloodtest> createState() => _bloodtestState();
+  State<Bloodtest> createState() => BloodtestState();
 }
 
 String blood = '0';
@@ -23,7 +24,7 @@ int b = 0;
 int op = 1;
 
 // final Color color;
-class _bloodtestState extends State<bloodtest> {
+class BloodtestState extends State<Bloodtest> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,11 +32,11 @@ class _bloodtestState extends State<bloodtest> {
       home: Scaffold(
         appBar: CustomAppBar(
             title: 'bloodtest',
-            backgroundColor: Color.fromRGBO(250, 250, 250, 1)),
-        drawer: Drawer(
+            backgroundColor: const Color.fromRGBO(250, 250, 250, 1)),
+        drawer: const Drawer(
           child: drawer(),
         ),
-        bottomNavigationBar: bottonbar(),
+        bottomNavigationBar: Bottonbar(),
         body: Stack(
           children: [
             backnext(
@@ -43,7 +44,7 @@ class _bloodtestState extends State<bloodtest> {
               nextvisible: "true",
               pathback: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => add()));
+                    context, MaterialPageRoute(builder: (context) => const Add()));
               },
               pathnext: () {},
             ),
@@ -66,7 +67,7 @@ class _bloodtestState extends State<bloodtest> {
                 padding: const EdgeInsets.only(left: 130, right: 140),
                 child: TextFormField(
                   maxLength: 3,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     counterText: '',
                     hintText: '---',
                     hintStyle: TextStyle(fontSize: 20, letterSpacing: 10),
@@ -75,7 +76,7 @@ class _bloodtestState extends State<bloodtest> {
                           width: 0, color: Colors.transparent), //<-- SEE HERE
                     ),
                   ),
-                  style: TextStyle(fontSize: 25),
+                  style: const TextStyle(fontSize: 25),
                   keyboardType: TextInputType.number,
                   inputFormatters: <TextInputFormatter>[
                     // for below version 2 use this
@@ -91,13 +92,11 @@ class _bloodtestState extends State<bloodtest> {
                         if (value == '') {
                           value = '0';
                           blood = value;
-                          print(double.parse(blood));
                           // blood = value;
                         } else {
                           if (double.parse(blood) > 300) {
                             blood = '300';
                           }
-                          print(double.parse(blood));
                         }
                         if (double.parse(value) < 140) {
                           r = 0;
@@ -119,9 +118,9 @@ class _bloodtestState extends State<bloodtest> {
                 ),
               ),
             ),
-            Center(
+            const Center(
               child: Padding(
-                padding: const EdgeInsets.only(left: 40),
+                padding: EdgeInsets.only(left: 40),
                 child: Text(
                   "mg/l",
                   style: TextStyle(fontSize: 20),

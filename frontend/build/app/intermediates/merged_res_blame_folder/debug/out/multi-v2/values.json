@@ -1,25 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\AORUS\\prjct\\D.one\\frontend\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\AORUS\\prjct\\D-one\\frontend\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\AORUS\\prjct\\D.one\\frontend\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\AORUS\\prjct\\D-one\\frontend\\build\\local_auth_android\\intermediates\\packaged_res\\debug\\values\\values.xml",
                     "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "176,832",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "483,998"
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,100,144,189,237,285,331,377,425",
+                        "endLines": "2,3,4,5,6,7,8,9,15",
+                        "endColumns": "44,43,44,47,47,45,45,47,10",
+                        "endOffsets": "95,139,184,232,280,326,372,420,720"
                     },
                     "to": {
-                        "startLines": "1479,1484",
-                        "startColumns": "4,4",
-                        "startOffsets": "96854,97162",
-                        "endLines": "1483,1486",
-                        "endColumns": "12,12",
-                        "endOffsets": "97157,97326"
+                        "startLines": "64,93,96,125,132,211,231,232,404",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3549,5701,5880,7728,8183,13543,15057,15103,27482",
+                        "endLines": "64,93,96,125,132,211,231,232,409",
+                        "endColumns": "44,43,44,47,47,45,45,47,10",
+                        "endOffsets": "3589,5740,5920,7771,8226,13584,15098,15146,27777"
                     }
                 },
                 {
@@ -133,6 +133,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\AORUS\\prjct\\D-one\\frontend\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,281,385,494,614,718",
+                        "endColumns": "143,81,103,108,119,103,80",
+                        "endOffsets": "194,276,380,489,609,713,794"
+                    },
+                    "to": {
+                        "startLines": "380,391,395,396,397,398,399",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "25284,26294,26672,26776,26885,27005,27109",
+                        "endColumns": "143,81,103,108,119,103,80",
+                        "endOffsets": "25423,26371,26771,26880,27000,27104,27185"
+                    }
+                },
+                {
                     "source": "C:\\Users\\AORUS\\.gradle\\caches\\transforms-3\\542a859793ec57d6a4d40865c7efc6d9\\transformed\\jetified-window-1.0.0-beta04\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,7,8,9,10,11,19,23,34,51",
@@ -149,23 +166,6 @@
                         "endLines": "42,43,44,45,295,2038,2042,3144,3161,3169",
                         "endColumns": "11,59,51,44,59,24,24,24,24,24",
                         "endOffsets": "2134,2194,2246,2291,18965,138179,138376,193301,194415,194808"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\AORUS\\prjct\\D.one\\frontend\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "55,199,281,385,494,614,718",
-                        "endColumns": "143,81,103,108,119,103,80",
-                        "endOffsets": "194,276,380,489,609,713,794"
-                    },
-                    "to": {
-                        "startLines": "380,391,395,396,397,398,399",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "25284,26294,26672,26776,26885,27005,27109",
-                        "endColumns": "143,81,103,108,119,103,80",
-                        "endOffsets": "25423,26371,26771,26880,27000,27104,27185"
                     }
                 },
                 {
@@ -188,22 +188,22 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\AORUS\\prjct\\D.one\\frontend\\build\\local_auth_android\\intermediates\\packaged_res\\debug\\values\\values.xml",
+                    "source": "C:\\Users\\AORUS\\prjct\\D-one\\frontend\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,100,144,189,237,285,331,377,425",
-                        "endLines": "2,3,4,5,6,7,8,9,15",
-                        "endColumns": "44,43,44,47,47,45,45,47,10",
-                        "endOffsets": "95,139,184,232,280,326,372,420,720"
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "176,832",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "483,998"
                     },
                     "to": {
-                        "startLines": "64,93,96,125,132,211,231,232,404",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3549,5701,5880,7728,8183,13543,15057,15103,27482",
-                        "endLines": "64,93,96,125,132,211,231,232,409",
-                        "endColumns": "44,43,44,47,47,45,45,47,10",
-                        "endOffsets": "3589,5740,5920,7771,8226,13584,15098,15146,27777"
+                        "startLines": "1479,1484",
+                        "startColumns": "4,4",
+                        "startOffsets": "96854,97162",
+                        "endLines": "1483,1486",
+                        "endColumns": "12,12",
+                        "endOffsets": "97157,97326"
                     }
                 },
                 {

@@ -1,10 +1,7 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/add_menu.dart';
 import 'package:flutter_application_1/screens/background/backgroundLogup.dart';
 import 'package:flutter_application_1/screens/menu.dart';
-import 'background/backgroundLogin.dart';
 import 'forms/login_form.dart';
 // import 'package:flutter_application_1/screens/forms/chatGPT.dart';
 
@@ -20,8 +17,8 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        "menu": (context) => menu(),
-        "add": (context) => add(),
+        "menu": (context) => const Menu(),
+        "add": (context) => const Add(),
       },
       debugShowCheckedModeBanner: false,
       title: 'Material App',
@@ -29,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
         body: Stack(
           children: [
             BackgroundLogup(),
-            LoginForm(),
+            const LoginForm(),
           ],
         ),
       ),
