@@ -210,7 +210,7 @@ class _LoginFormState extends State<LoginForm> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => menu(),
+                                  builder: (context) => const Menu(),
                                 ),
                               );
                             }

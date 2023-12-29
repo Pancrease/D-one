@@ -285,7 +285,7 @@ class _SetteingPageState extends State<SetteingPage> {
           ),
         ],
       ),
-      bottomNavigationBar: bottonbar(),
+      bottomNavigationBar: Bottonbar(),
     );
   }
 }

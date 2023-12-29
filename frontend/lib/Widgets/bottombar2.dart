@@ -16,7 +16,7 @@ class Bottonbar extends StatefulWidget {
   String? UserName;
 
   // ignore: non_constant_identifier_names
-  Bottonbar({Key? key, this.text, this.UserName}) : super(key: key);
+  Bottonbar({Key? key, this.text, this.UserName, String? userName}) : super(key: key);
   @override
   State<Bottonbar> createState() => BottonbarState();
 }

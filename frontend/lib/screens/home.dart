@@ -15,7 +15,7 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return MaterialApp(
         routes: {
-          "menu": (context) => menu(),
+          "menu": (context) => const Menu(),
           "add": (context) => const Add(),
           "login": (context) => const LoginPage(),
         },

@@ -16,16 +16,17 @@ class _MySuccesState extends State<MySucces> {
     super.initState();
 
     Timer(
-      Duration(seconds: 3),
+      const Duration(seconds: 3),
       () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => menu(),
+          builder: (context) => const Menu(),
         ),
       ),
     );
   }
 
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -40,7 +41,7 @@ class _MySuccesState extends State<MySucces> {
                 animatedTexts: [
                   ScaleAnimatedText(
                     'Your registration was successful !',
-                    textStyle: TextStyle(
+                    textStyle: const TextStyle(
                         fontSize: 25.0,
                         fontFamily: 'Bobbers',
                         fontWeight: FontWeight.bold,
@@ -48,14 +49,14 @@ class _MySuccesState extends State<MySucces> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 80,
               ),
               Image.asset(
                 "images/illustration-1.png",
                 width: 230,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(

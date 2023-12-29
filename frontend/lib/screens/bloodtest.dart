@@ -1,3 +1,4 @@
+// ignore_for_file: unused_import
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/Widgets/appbar.dart';
@@ -35,7 +36,7 @@ class BloodtestState extends State<Bloodtest> {
         drawer: const Drawer(
           child: drawer(),
         ),
-        bottomNavigationBar: bottonbar(),
+        bottomNavigationBar: Bottonbar(),
         body: Stack(
           children: [
             backnext(
@@ -91,13 +92,11 @@ class BloodtestState extends State<Bloodtest> {
                         if (value == '') {
                           value = '0';
                           blood = value;
-                          print(double.parse(blood));
                           // blood = value;
                         } else {
                           if (double.parse(blood) > 300) {
                             blood = '300';
                           }
-                          print(double.parse(blood));
                         }
                         if (double.parse(value) < 140) {
                           r = 0;

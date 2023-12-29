@@ -17,7 +17,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        "menu": (context) => menu(),
+        "menu": (context) => const Menu(),
         "add": (context) => const Add(),
       },
       debugShowCheckedModeBanner: false,

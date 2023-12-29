@@ -36,7 +36,7 @@ class _AddState extends State<Add> {
         drawer: const Drawer(
           child: drawer(),
         ),
-        bottomNavigationBar: bottonbar(),
+        bottomNavigationBar: Bottonbar(),
         body: Stack(
           children: [
             backnext(
@@ -44,7 +44,7 @@ class _AddState extends State<Add> {
               nextvisible: "false",
               pathback: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => menu()));
+                    context, MaterialPageRoute(builder: (context) => const Menu()));
               },
             ),
             Center(

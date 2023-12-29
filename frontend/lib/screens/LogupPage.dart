@@ -1,8 +1,7 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/background/backgroundLogin.dart';
-import 'background/backgroundLogup.dart';
+import 'package:flutter_application_1/screens/background/BackgroundLogin.dart';
 import 'forms/logupform.dart';
 
 class LogupPage extends StatefulWidget {
@@ -20,9 +19,9 @@ class _LogupPageState extends State<LogupPage> {
       title: 'Material App',
       home: Scaffold(
         body: Stack(
-          children: [
+          children: const [
             BackgroundLogin(),
-            const LogupForm(),
+            LogupForm(),
           ],
         ),
       ),
