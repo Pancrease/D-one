@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+
+// ignore: must_be_immutable
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final Image? images;
@@ -17,7 +19,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return PreferredSize(
-        preferredSize: Size.fromHeight(120.0),
+        preferredSize: const Size.fromHeight(120.0),
         child: AppBar(
           automaticallyImplyLeading: false,
           toolbarHeight: 120,
@@ -30,32 +32,31 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   onTap: () {
                     Scaffold.of(context).openDrawer();
                   },
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     radius: 30.0,
                     backgroundImage: AssetImage("assets/hatime.png"),
                   ),
                 ),
               ),
-              Container(
-                  child: Column(
+              Column(
                 // mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: Text(
-                      greeting!,
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 6, 80, 141), fontSize: 25),
-                    ),
-                  ),
-                  Text(
-                    "let's make this day productive",
-                    style: TextStyle(
-                        color: Color.fromARGB(255, 94, 93, 93), fontSize: 13),
-                  )
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Text(
+                  greeting!,
+                  style: const TextStyle(
+                      color: Color.fromARGB(255, 6, 80, 141), fontSize: 25),
+                ),
+              ),
+              const Text(
+                "let's make this day productive",
+                style: TextStyle(
+                    color: Color.fromARGB(255, 94, 93, 93), fontSize: 13),
+              )
                 ],
-              ))
+              )
             ],
           ),
           backgroundColor: backgroundColor,

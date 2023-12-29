@@ -1,9 +1,11 @@
-import 'dart:ui';
-
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 
 class BackgroundLogin extends StatefulWidget {
+  const BackgroundLogin({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _MyPainterState createState() => _MyPainterState();
 }
 

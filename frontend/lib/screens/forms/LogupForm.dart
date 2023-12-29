@@ -1,7 +1,7 @@
+
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/Onboarding.dart';
-import 'package:flutter_application_1/screens/menu.dart';
-import 'package:flutter_application_1/screens/LogupPage.dart';
 import 'package:flutter_application_1/screens/LoginPage.dart';
 import 'package:flutter_application_1/screens/phone.dart';
 
@@ -27,13 +27,15 @@ class _LogupFormState extends State<LogupForm> {
 
   // final  msgEUserUPe = "";
 
-  GlobalKey<FormState> _numberForm = GlobalKey();
+  final GlobalKey<FormState> _numberForm = GlobalKey();
 
   bool passwordVisible = true;
+  // ignore: non_constant_identifier_names
   bool ConfirmpasswordVisible = true;
   bool _keyboardVisible = false;
 
   bool _isVisible = true;
+  // ignore: non_constant_identifier_names
   bool _BoxVisible = false;
 
   void showToast() {
@@ -43,6 +45,7 @@ class _LogupFormState extends State<LogupForm> {
     });
   }
 
+  // ignore: non_constant_identifier_names
   void HideToast() {
     setState(() {
       _isVisible = false;
@@ -65,7 +68,7 @@ class _LogupFormState extends State<LogupForm> {
       },
       child: Center(
         child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -96,7 +99,7 @@ class _LogupFormState extends State<LogupForm> {
                 ),
                 Visibility(
                     visible: _BoxVisible,
-                    child: SizedBox(
+                    child: const SizedBox(
                       height: 50,
                     )),
                 SizedBox(
@@ -139,12 +142,15 @@ class _LogupFormState extends State<LogupForm> {
                                   },
                                   controller: msgUP,
                                   validator: (val) {
-                                    if (val!.isEmpty)
+                                    if (val!.isEmpty) {
                                       return "complet your Email";
-                                    if (!val.contains("@"))
+                                    }
+                                    if (!val.contains("@")) {
                                       return "Set your Email";
+                                    }
+                                    return null;
                                   },
-                                  decoration: InputDecoration(
+                                  decoration: const InputDecoration(
                                     hintStyle: TextStyle(fontSize: 20),
                                     border: InputBorder.none,
                                     icon: Icon(Icons.email_outlined),
@@ -163,8 +169,9 @@ class _LogupFormState extends State<LogupForm> {
                                   controller: msgEUserUP,
                                   validator: (val) {
                                     if (val!.isEmpty) return "complet Username";
+                                    return null;
                                   },
-                                  decoration: InputDecoration(
+                                  decoration: const InputDecoration(
                                     hintStyle: TextStyle(fontSize: 20),
                                     border: InputBorder.none,
                                     icon: Icon(Icons.person_outline_rounded),
@@ -183,14 +190,16 @@ class _LogupFormState extends State<LogupForm> {
                                   controller: msgpassUP,
                                   validator: (val) {
                                     if (val!.isEmpty) return "Set Password";
-                                    if (val.length < 8)
+                                    if (val.length < 8) {
                                       return "Password must be at least 8 characters";
+                                    }
+                                    return null;
                                   },
                                   obscureText: passwordVisible,
                                   decoration: InputDecoration(
                                     border: InputBorder.none,
-                                    hintStyle: TextStyle(fontSize: 22),
-                                    icon: Icon(Icons.lock_outline_rounded),
+                                    hintStyle: const TextStyle(fontSize: 22),
+                                    icon: const Icon(Icons.lock_outline_rounded),
                                     hintText: "Password",
                                     suffixIcon: IconButton(
                                       icon: Icon(passwordVisible
@@ -218,14 +227,16 @@ class _LogupFormState extends State<LogupForm> {
                                   controller: msgconfpassUP,
                                   validator: (val) {
                                     if (val!.isEmpty) return "Set Password";
-                                    if (val.length < 8)
+                                    if (val.length < 8) {
                                       return "Password must be at least 8 characters";
+                                    }
+                                    return null;
                                   },
                                   obscureText: ConfirmpasswordVisible,
                                   decoration: InputDecoration(
                                     border: InputBorder.none,
-                                    hintStyle: TextStyle(fontSize: 22),
-                                    icon: Icon(Icons.lock_reset_outlined),
+                                    hintStyle: const TextStyle(fontSize: 22),
+                                    icon: const Icon(Icons.lock_reset_outlined),
                                     hintText: "Confirm Password",
                                     suffixIcon: IconButton(
                                       icon: Icon(ConfirmpasswordVisible
@@ -256,7 +267,7 @@ class _LogupFormState extends State<LogupForm> {
                           decoration: BoxDecoration(
                             boxShadow: [
                               BoxShadow(
-                                color: Color.fromARGB(255, 4, 84, 134)!
+                                color: const Color.fromARGB(255, 4, 84, 134)
                                     .withOpacity(0.5),
                                 spreadRadius: 5,
                                 blurRadius: 7,
@@ -281,18 +292,17 @@ class _LogupFormState extends State<LogupForm> {
                                   msgpassUPe = msgpassUP.text;
                                   msgconfpassUPe = msgconfpassUP.text;
                                   msgEUserUPe = msgEUserUP.text;
-                                  print(msgEUserUPe);
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
                                             // menu(UserName: msgEUserUPe),
-                                            MyPhone()),
+                                            const MyPhone()),
                                   );
                                 });
                               }
                             },
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.arrow_forward_ios_outlined,
                               color: Colors.white,
                               size: 32,
@@ -303,7 +313,7 @@ class _LogupFormState extends State<LogupForm> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 23,
                 ),
                 Container(
@@ -311,7 +321,7 @@ class _LogupFormState extends State<LogupForm> {
                   child: Center(
                     child: Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         Visibility(

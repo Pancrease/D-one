@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/home.dart';
 import 'package:flutter_application_1/screens/Setting.dart';
 import 'package:flutter_application_1/screens/menu.dart';
 
+// ignore: camel_case_types
 class drawer extends StatefulWidget {
   const drawer({super.key});
 
@@ -10,9 +10,11 @@ class drawer extends StatefulWidget {
   State<drawer> createState() => _drawerState();
 }
 
+// ignore: camel_case_types
 class _drawerState extends State<drawer> {
   @override
   Widget build(BuildContext context) {
+    // ignore: non_constant_identifier_names, unused_local_variable
     var Userimg = "assets/hatim1.jpeg";
     return Drawer(
       child: ListView(
@@ -47,11 +49,11 @@ class _drawerState extends State<drawer> {
             leading:
                 const Icon(Icons.home, color: Color.fromARGB(255, 8, 132, 204)),
             title: const Text('Home', style: TextStyle(fontSize: 16.0)),
-            trailing: Icon(Icons.arrow_right),
+            trailing: const Icon(Icons.arrow_right),
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => home()),
+                MaterialPageRoute(builder: (context) => const Menu()),
               );
             },
           ),
@@ -61,13 +63,11 @@ class _drawerState extends State<drawer> {
               color: Color.fromARGB(255, 8, 132, 204),
             ),
             title: const Text('Profile', style: TextStyle(fontSize: 16.0)),
-            trailing: Icon(Icons.arrow_right),
+            trailing: const Icon(Icons.arrow_right),
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => menu(),
-                ),
+                MaterialPageRoute(builder: (context) => const Menu()),
               );
             },
           ),
@@ -75,13 +75,11 @@ class _drawerState extends State<drawer> {
             leading: const Icon(Icons.co_present,
                 color: Color.fromARGB(255, 8, 132, 204)),
             title: const Text('presentation', style: TextStyle(fontSize: 16.0)),
-            trailing: Icon(Icons.arrow_right),
+            trailing: const Icon(Icons.arrow_right),
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => menu(),
-                ),
+                MaterialPageRoute(builder: (context) => const Menu()),
               );
             },
           ),
@@ -89,13 +87,11 @@ class _drawerState extends State<drawer> {
             leading: const Icon(Icons.notifications,
                 color: Color.fromARGB(255, 8, 132, 204)),
             title: const Text('Notification', style: TextStyle(fontSize: 16.0)),
-            trailing: Icon(Icons.arrow_right),
+            trailing: const Icon(Icons.arrow_right),
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => menu(),
-                ),
+                MaterialPageRoute(builder: (context) => const Menu()),
               );
             },
           ),
@@ -105,7 +101,7 @@ class _drawerState extends State<drawer> {
               color: Color.fromARGB(255, 8, 132, 204),
             ),
             title: const Text('Calendar', style: TextStyle(fontSize: 16.0)),
-            trailing: Icon(Icons.arrow_right),
+            trailing: const Icon(Icons.arrow_right),
             onTap: () {
               Navigator.push(
                 context,
@@ -124,7 +120,7 @@ class _drawerState extends State<drawer> {
               'Settings',
               style: TextStyle(fontSize: 16.0),
             ),
-            trailing: Icon(Icons.arrow_right),
+            trailing: const Icon(Icons.arrow_right),
             onTap: () {
               Navigator.push(
                 context,
