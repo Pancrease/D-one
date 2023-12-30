@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/bloodtest.dart';
 import 'package:flutter_application_1/screens/yum.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -67,9 +69,10 @@ class _FoodState extends State<Food> {
                           itemBuilder: (context, index) {
                             return GestureDetector(
                                 onTap: () {
-                                  print(
-                                      'Item tapped: ${foodItems[index].foodName}');
-                                      // send api request to get the food nutrition values and store them to the
+                                  _onclickitem(foodItems[index].foodName);
+                                  // print(
+                                  //     'Item tapped: ${foodItems[index].foodName}');
+                                  // send api request to get the food nutrition values and store them to
                                 },
                                 child: ListTile(
                                   leading: Image.network(
@@ -90,6 +93,15 @@ class _FoodState extends State<Food> {
   }
 
   List<FoodItem> foodItems = [];
+  Future<void> _onclickitem(String s) async {
+     final response = await http.post(
+      Uri.parse(
+          'localhost:8000/food'),
+      body: {
+          'food': s,  
+      }
+    );
+  }
   Future<void> _onSearchSubmitted() async {
     final searchValue = _editingController.text.trim();
     if (searchValue.isNotEmpty) {
