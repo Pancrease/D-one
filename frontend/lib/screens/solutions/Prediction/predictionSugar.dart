@@ -3,19 +3,20 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Widgets/appbar.dart';
 import 'package:flutter_application_1/Widgets/back_button.dart';
+import 'package:flutter_application_1/screens/add_menu.dart';
 import 'package:flutter_application_1/screens/menu.dart';
 
-class Prediction extends StatefulWidget {
-  const Prediction({super.key});
+class PredictionSugar extends StatefulWidget {
+  const PredictionSugar({super.key});
 
   @override
-  State<Prediction> createState() => _PredictionState();
+  State<PredictionSugar> createState() => _PredictionSugarState();
 }
 
-class _PredictionState extends State<Prediction> {
+class _PredictionSugarState extends State<PredictionSugar> {
   @override
+  int timeprediction = 10;
   Widget build(BuildContext context) {
-    double insulinDose = 10.0;
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
@@ -34,7 +35,7 @@ class _PredictionState extends State<Prediction> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const Menu()));
+                                builder: (context) => const Add()));
                       },
                     ),
                   ],
@@ -46,7 +47,7 @@ class _PredictionState extends State<Prediction> {
                       Container(
                         child: const CircleAvatar(
                             radius: 100,
-                            backgroundImage: AssetImage('assets/warning.jpg')),
+                            backgroundImage: AssetImage('assets/blood.jpg')),
                       ),
                       Container(
                         margin: const EdgeInsets.only(top: 40),
@@ -61,7 +62,7 @@ class _PredictionState extends State<Prediction> {
                       Container(
                         margin: const EdgeInsets.only(top: 5),
                         child: Text(
-                          'Set your insulin dose to: $insulinDose',
+                          'Your blood sugar will be high in $timeprediction hours',
                           style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,

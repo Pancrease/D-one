@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_application_1/screens/solutions/Prediction/prediction.dart';
+import 'package:flutter_application_1/screens/solutions/Prediction/predictioninsuline.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'dart:async';
 
 class Loading extends StatefulWidget {
-  const Loading({super.key});
+  final Function(BuildContext context) onTimerComplete;
+  const Loading({Key? key, required this.onTimerComplete}) : super(key: key);
 
   @override
   State<Loading> createState() => _LoadingState();
@@ -19,12 +20,7 @@ class _LoadingState extends State<Loading> {
 
     Timer(
       const Duration(seconds: 4),
-      () => Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const Prediction(),
-        ),
-      ),
+      () => widget.onTimerComplete(context),
     );
   }
 

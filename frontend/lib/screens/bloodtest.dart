@@ -157,10 +157,24 @@ class BloodtestState extends State<Bloodtest> {
                       final formattedDate =
                           DateFormat('yyyy-MM-dd HH:mm:ss').format(currentDate);
                       //double.parse(blood)
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Menu()));
+                      var value = blood;
+                      if (double.parse(value) >= 160) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Correction()));
+                      } else if (double.parse(value) > 140 &&
+                          double.parse(value) < 160) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Warning()));
+                      } else if (double.parse(value) < 140) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Menu()));
+                      }
                     },
                     child:
                         const Text('Validate', style: TextStyle(fontSize: 25)),

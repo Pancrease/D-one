@@ -5,6 +5,7 @@ import 'package:flutter_application_1/Widgets/appbar.dart';
 import 'package:flutter_application_1/Widgets/drawer.dart';
 import 'package:flutter_application_1/Widgets/loading.dart';
 import 'package:flutter_application_1/screens/menu.dart';
+import 'package:flutter_application_1/screens/solutions/Prediction/predictioninsuline.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class Correction extends StatefulWidget {
@@ -60,9 +61,22 @@ class CorrectionState extends State<Correction> {
                             fixedSize: const Size(230, 45)),
                         onPressed: () {
                           Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const Loading()));
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Loading(
+                                onTimerComplete: (BuildContext context) {
+                                  // Your condition to choose the next page
+
+                                  Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => Prediction(),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ),
+                          );
                         },
                         child:
                             const Text('Yes', style: TextStyle(fontSize: 25)),

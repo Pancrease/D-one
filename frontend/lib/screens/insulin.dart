@@ -43,7 +43,10 @@ class _InsulineState extends State<Insuline> {
                       children: [
                     Text(
                       "Enter Your Last Injected Dose",
-                      style: TextStyle(fontSize: 30),
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(4, 64, 110, 1)),
                     ),
                     SizedBox(height: 30),
                     Text(
