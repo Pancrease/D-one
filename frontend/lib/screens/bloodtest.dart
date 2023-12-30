@@ -7,8 +7,11 @@ import 'package:flutter_application_1/Widgets/bottombar2.dart';
 import 'package:flutter_application_1/Widgets/drawer.dart';
 import 'package:flutter_application_1/screens/add_menu.dart';
 import 'package:flutter_application_1/screens/menu.dart';
+import 'package:flutter_application_1/screens/solutions/correction.dart';
+import 'package:flutter_application_1/screens/solutions/warning.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'dart:math';
+import 'package:intl/intl.dart';
 
 class Bloodtest extends StatefulWidget {
   const Bloodtest({super.key});
@@ -41,12 +44,27 @@ class BloodtestState extends State<Bloodtest> {
           children: [
             backnext(
               backvisible: "true",
-              nextvisible: "true",
+              nextvisible: "false",
               pathback: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => const Add()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Add()));
               },
-              pathnext: () {},
+              pathnext: () {
+                var value = blood;
+                if (double.parse(value) >= 160) {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Correction()));
+                } else if (double.parse(value) > 140 &&
+                    double.parse(value) < 160) {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Warning()));
+                } else if (double.parse(value) < 140) {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Menu()));
+                }
+              },
             ),
             Center(
               child: Transform(
@@ -126,7 +144,28 @@ class BloodtestState extends State<Bloodtest> {
                   style: TextStyle(fontSize: 20),
                 ),
               ),
-            )
+            ),
+            Container(
+                padding: EdgeInsets.only(bottom: 80),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        fixedSize: const Size(230, 45)),
+                    onPressed: () {
+                      final currentDate = DateTime.now();
+                      final formattedDate =
+                          DateFormat('yyyy-MM-dd HH:mm:ss').format(currentDate);
+                      //double.parse(blood)
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Menu()));
+                    },
+                    child:
+                        const Text('Validate', style: TextStyle(fontSize: 25)),
+                  ),
+                ))
           ],
         ),
       ),

@@ -7,6 +7,7 @@ import 'package:flutter_application_1/Widgets/bottombar2.dart';
 import 'package:flutter_application_1/Widgets/drawer.dart';
 import 'package:flutter_application_1/screens/bloodtest.dart';
 import 'package:flutter_application_1/screens/food.dart';
+import 'package:flutter_application_1/screens/insulin.dart';
 import 'package:flutter_application_1/screens/menu.dart';
 import 'dart:math';
 
@@ -32,7 +33,8 @@ class _AddState extends State<Add> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: CustomAppBar(
-            title: 'add', backgroundColor: const Color.fromRGBO(250, 250, 250, 1)),
+            title: 'add',
+            backgroundColor: const Color.fromRGBO(250, 250, 250, 1)),
         drawer: const Drawer(
           child: drawer(),
         ),
@@ -43,8 +45,8 @@ class _AddState extends State<Add> {
               backvisible: "true",
               nextvisible: "false",
               pathback: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => const Menu()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Menu()));
               },
             ),
             Center(
@@ -58,8 +60,10 @@ class _AddState extends State<Add> {
                   FloatingActionButton(
                     heroTag: generateRandomString(5),
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => const Food()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Food()));
                     },
                     shape: const StadiumBorder(
                         side: BorderSide(color: Colors.blue, width: 4)),
@@ -86,8 +90,10 @@ class _AddState extends State<Add> {
                   FloatingActionButton(
                     heroTag: generateRandomString(7),
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => const Sport()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Sport()));
                     },
                     shape: const StadiumBorder(
                         side: BorderSide(color: Colors.indigo, width: 4)),
@@ -114,8 +120,10 @@ class _AddState extends State<Add> {
                   FloatingActionButton(
                     heroTag: generateRandomString(10),
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => const Bloodtest()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Bloodtest()));
                     },
                     shape: const StadiumBorder(
                         side: BorderSide(color: Colors.red, width: 4)),
@@ -142,6 +150,10 @@ class _AddState extends State<Add> {
                   FloatingActionButton(
                     heroTag: generateRandomString(12),
                     onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Insuline()));
                     },
                     shape: const StadiumBorder(
                         side: BorderSide(color: Colors.green, width: 4)),
