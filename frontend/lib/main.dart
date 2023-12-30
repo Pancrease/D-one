@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        //MATBDLOHACH GHIR DKHL W DIR NEXT NEXT....
+
         home: _screen);
   }
 }
