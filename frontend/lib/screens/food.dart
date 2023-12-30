@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/yum.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class Food extends StatefulWidget {
   const Food({super.key});
@@ -9,232 +11,13 @@ class Food extends StatefulWidget {
 }
 
 class _FoodState extends State<Food> {
-  TextEditingController editingController = TextEditingController();
-  Yum yum = Yum.fromJson(
-    {
-      "restaurant": "Chipotle",
-      "foodItems": [
-        {
-          "foodName": "Chicken Burrito",
-          "foodType": "Burrito",
-          "protein": "chicken",
-          "calories": 975
-        },
-        {
-          "foodName": "Steak Burrito",
-          "foodType": "Burrito",
-          "protein": "steak",
-          "calories": 945
-        },
-        {
-          "foodName": "Carnitas Burrito",
-          "foodType": "Burrito",
-          "protein": "carnitas",
-          "calories": 1005
-        },
-        {
-          "foodName": "Barbacoa Burrito",
-          "foodType": "Burrito",
-          "protein": "barbacoa",
-          "calories": 965
-        },
-        {
-          "foodName": "Chorizo Burrito",
-          "foodType": "Burrito",
-          "protein": "chorizo",
-          "calories": 1095
-        },
-        {
-          "foodName": "Sofritas Burrito",
-          "foodType": "Burrito",
-          "protein": "sofritas",
-          "calories": 945
-        },
-        {
-          "foodName": "Chicken Burrito Bowl",
-          "foodType": "Burrito Bowl",
-          "calories": 630
-        },
-        {"foodName": "Chicken Bowl", "calories": 630},
-        {
-          "foodName": "Steak Burrito Bowl",
-          "foodType": "Burrito Bowl",
-          "calories": 600
-        },
-        {"foodName": "Steak Bowl", "calories": 600},
-        {
-          "foodName": "Carnitas Burrito Bowl",
-          "foodType": "Burrito Bowl",
-          "calories": 660
-        },
-        {"foodName": "Carnitas Bowl", "calories": 660},
-        {
-          "foodName": "Barbacoa Burrito Bowl",
-          "foodType": "Burrito Bowl",
-          "calories": 620
-        },
-        {"foodName": "Barbacoa Bowl", "calories": 620},
-        {
-          "foodName": "Chorizo Burrito Bowl",
-          "foodType": "Burrito Bowl",
-          "calories": 750
-        },
-        {"foodName": "Chorizo Bowl", "calories": 750},
-        {
-          "foodName": "Sofritas Burrito Bowl",
-          "foodType": "Burrito Bowl",
-          "calories": 600
-        },
-        {"foodName": "Sofritas Bowl", "calories": 600},
-        {
-          "foodName": "Chicken Corn Tortilla Taco",
-          "foodType": "Taco",
-          "protein": "chicken",
-          "calories": 650
-        },
-        {
-          "foodName": "Chicken Flour Tortilla Taco",
-          "foodType": "Taco",
-          "protein": "chicken",
-          "calories": 700
-        },
-        {
-          "foodName": "Steak Corn Tortilla Taco",
-          "foodType": "Taco",
-          "protein": "steak",
-          "calories": 620
-        },
-        {
-          "foodName": "Steak Flour Tortilla Taco",
-          "foodType": "Taco",
-          "protein": "steak",
-          "calories": 670
-        },
-        {
-          "foodName": "Carnitas Corn Tortilla Taco",
-          "foodType": "Taco",
-          "protein": "carnitas",
-          "calories": 680
-        },
-        {
-          "foodName": "Carnitas Flour Tortilla Taco",
-          "foodType": "Taco",
-          "protein": "carnitas",
-          "calories": 730
-        },
-        {
-          "foodName": "Barbacoa Corn Tortilla Taco",
-          "foodType": "Taco",
-          "protein": "barbacoa",
-          "calories": 640
-        },
-        {
-          "foodName": "Barbacoa Flour Tortilla Taco",
-          "foodType": "Taco",
-          "protein": "barbacoa",
-          "calories": 690
-        },
-        {
-          "foodName": "Chorizo Corn Tortilla Taco",
-          "foodType": "Taco",
-          "protein": "chorizo",
-          "calories": 770
-        },
-        {
-          "foodName": "Chorizo Flour Tortilla Taco",
-          "foodType": "Taco",
-          "protein": "chorizo",
-          "calories": 820
-        },
-        {
-          "foodName": "Sofritas Corn Tortilla Taco",
-          "foodType": "Taco",
-          "protein": "sofritas",
-          "calories": 620
-        },
-        {
-          "foodName": "Sofritas Flour Tortilla Taco",
-          "foodType": "Taco",
-          "protein": "sofritas",
-          "calories": 670
-        },
-        {
-          "foodName": "Chicken Salad",
-          "calories": 345,
-          "foodType": "Salad",
-          "sideItem": true,
-          "dressingItem": true
-        },
-        {
-          "foodName": "Steak Salad",
-          "calories": 315,
-          "foodType": "Salad",
-          "sideItem": true,
-          "dressingItem": true
-        },
-        {
-          "foodName": "Carnitas Salad",
-          "calories": 375,
-          "foodType": "Salad",
-          "sideItem": true,
-          "dressingItem": true
-        },
-        {
-          "foodName": "Barbacoa Salad",
-          "calories": 335,
-          "foodType": "Salad",
-          "sideItem": true,
-          "dressingItem": true
-        },
-        {
-          "foodName": "Chorizo Salad",
-          "calories": 465,
-          "foodType": "Salad",
-          "sideItem": true,
-          "dressingItem": true
-        },
-        {
-          "foodName": "Chicken Quesadilla",
-          "calories": 610,
-          "foodType": "Quesadilla"
-        },
-        {
-          "foodName": "Steak Quesadilla",
-          "calories": 550,
-          "foodType": "Quesadilla"
-        },
-        {
-          "foodName": "Carnitas Quesadilla",
-          "calories": 640,
-          "foodType": "Quesadilla"
-        },
-        {
-          "foodName": "Cheese Quesadilla",
-          "calories": 430,
-          "foodType": "Quesadilla"
-        },
-        {"foodName": "Kids Chicken Taco", "calories": 205},
-        {"foodName": "Kids Steak Taco", "calories": 200},
-        {"foodName": "Chips", "calories": 540, "sideItem": true},
-        {"foodName": "Chips and Salsa", "calories": 570, "sideItem": true},
-        {"foodName": "Chips and Guacamole", "calories": 770, "sideItem": true},
-        {"foodName": "Chips and Queso", "calories": 770, "sideItem": true}
-      ]
-    },
-  );
+  final TextEditingController _editingController = TextEditingController();
+  String apiResponse = '';
+
   // ignore: non_constant_identifier_names
   List FoodItems = [];
   @override
   Widget build(BuildContext context) {
-    void updateSearchQuery(String newQuery) {
-      setState(() {
-        FoodItems = yum.foodItems!
-            .where((element) => element.foodName!
-                .toLowerCase()
-                .contains(newQuery.toLowerCase()))
-            .toList();
-      });
-    }
     // ignore: unnecessary_new
     return new Scaffold(
       resizeToAvoidBottomInset: false,
@@ -255,10 +38,8 @@ class _FoodState extends State<Food> {
                 ),
                 const SizedBox(height: 10),
                 TextField(
-                  onChanged: ((value) {
-                    updateSearchQuery(value);
-                  }),
-                  controller: editingController,
+                  onEditingComplete: _onSearchSubmitted,
+                  controller: _editingController,
                   decoration: const InputDecoration(
                       labelText: "Search",
                       hintText: "Search",
@@ -270,7 +51,7 @@ class _FoodState extends State<Food> {
                 const SizedBox(height: 20),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.5,
-                  child: FoodItems.isEmpty
+                  child: foodItems.isEmpty
                       ? const Center(
                           child: Text(
                             "Search for a food",
@@ -282,13 +63,22 @@ class _FoodState extends State<Food> {
                           ),
                         )
                       : ListView.builder(
-                          itemCount: FoodItems.length,
+                          itemCount: foodItems.length,
                           itemBuilder: (context, index) {
-                            return ListTile(
-                              title: Text(FoodItems[index].foodName),
-                              subtitle:
-                                  Text(FoodItems[index].calories.toString()),
-                            );
+                            return GestureDetector(
+                                onTap: () {
+                                  print(
+                                      'Item tapped: ${foodItems[index].foodName}');
+                                      // send api request to get the food nutrition values and store them to the
+                                },
+                                child: ListTile(
+                                  leading: Image.network(
+                                      foodItems[index].photoUrl ?? '',
+                                      width: 48.0,
+                                      height: 48.0),
+                                  title: Text(foodItems[index].foodName),
+                                  subtitle: Text(foodItems[index].servingUnit),
+                                ));
                           }),
                 ),
               ],
@@ -298,4 +88,56 @@ class _FoodState extends State<Food> {
       ),
     );
   }
+
+  List<FoodItem> foodItems = [];
+  Future<void> _onSearchSubmitted() async {
+    final searchValue = _editingController.text.trim();
+    if (searchValue.isNotEmpty) {
+      try {
+        final headers = {
+          'Content-Type': 'application/json',
+          'x-app-id': '959cfeaa',
+          'x-app-key': 'dab04b128e9cbbe61b57e99317f78387',
+        };
+        final response = await http.get(
+          Uri.parse(
+              'https://trackapi.nutritionix.com/v2/search/instant/?query=$searchValue'),
+          headers: headers,
+        );
+
+        if (response.statusCode == 200) {
+          final Map<String, dynamic> jsonResponse = jsonDecode(response.body);
+
+          final List<dynamic> commonList = jsonResponse['common'];
+
+          setState(() {
+            // Clear existing items in the list
+            foodItems.clear();
+
+            // Map the commonList to a list of FoodItem objects
+            foodItems = commonList
+                .map((item) => FoodItem(
+                      foodName: item['food_name'],
+                      servingUnit: item['serving_unit'],
+                      photoUrl: item['photo']['thumb'],
+                    ))
+                .toList();
+            print(foodItems);
+          });
+        } else {
+          print('Request failed with status: ${response.statusCode}');
+        }
+      } catch (error) {
+        print('Error during API request: $error');
+      }
+    }
+  }
+}
+
+class FoodItem {
+  final String foodName;
+  final String servingUnit;
+  final String? photoUrl;
+
+  FoodItem({required this.foodName, required this.servingUnit, this.photoUrl});
 }
