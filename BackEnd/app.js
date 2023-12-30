@@ -3,6 +3,7 @@ require("dotenv").config();
 require("./models/db");
 
 const userRouter = require("./routes/user");
+const foodRouter =  require("./routes/food")
 const User = require("./models/user");
 const app = express();
 
@@ -16,6 +17,7 @@ const app = express();
 
 app.use(express.json());
 app.use(userRouter);
+app.use(foodRouter);
 
 // const test = async (Email, Password) =>{
 //   const user = await User.findOne({Email: Email});
@@ -34,6 +36,6 @@ app.get("/", (req, res) => {
   res.json({ success: true, message: "Back End Zone 🔥" });
 });
 
-app.listen(8000, () => {
+app.listen(5002, () => {
   console.log("listening!!");
 });
