@@ -19,7 +19,13 @@ exports.creatUser = async (req, res) => {
     Username,
     // ConfirmePassword
   });
-  await user.save();
+  try {
+    
+    await user.save();
+    
+  } catch (error) {
+    console.log(error);
+  }
   res.json({ success: true, user });
 };
 
