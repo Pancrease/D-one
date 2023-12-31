@@ -3,7 +3,8 @@ require("dotenv").config();
 require("./models/db");
 
 const userRouter = require("./routes/user");
-const foodRouter =  require("./routes/food")
+const foodRouter = require("./routes/food")
+const sugarRouter = require("./routes/sugar")
 const User = require("./models/user");
 const app = express();
 
@@ -18,6 +19,7 @@ const app = express();
 app.use(express.json());
 app.use(userRouter);
 app.use(foodRouter);
+app.use(sugarRouter);
 
 // const test = async (Email, Password) =>{
 //   const user = await User.findOne({Email: Email});
