@@ -30,11 +30,11 @@ exports.Addfood = async (req, res) => {
       (nutrient) => nutrient.attr_id === 205
     );
     const isNewFood = await Food({
-     Email: "hatim.allouch@e-polytechnique.ma",
-     Food: food,
-     Carbs: f.value, 
-     time: Date.now(),
-    })
+      Email: "hatim.allouch@e-polytechnique.ma",
+      Food: food,
+      Carbs: f.value,
+      time: Date.now(),
+    });
     if (response.statusCode === 200) {
       res.json({
         success: true,

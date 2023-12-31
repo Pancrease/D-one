@@ -6,6 +6,9 @@ import 'package:flutter_application_1/Widgets/back_button.dart';
 import 'package:flutter_application_1/screens/add_menu.dart';
 import 'package:flutter_application_1/screens/bloodtest.dart';
 import 'package:intl/intl.dart';
+import 'package:intl/intl.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class Insuline extends StatefulWidget {
   const Insuline({super.key});
@@ -44,7 +47,7 @@ class _InsulineState extends State<Insuline> {
                     Text(
                       "Enter Your Last Injected Dose",
                       style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 25,
                           fontWeight: FontWeight.bold,
                           color: Color.fromRGBO(4, 64, 110, 1)),
                     ),
@@ -72,14 +75,12 @@ class _InsulineState extends State<Insuline> {
                       style: ElevatedButton.styleFrom(
                           fixedSize: const Size(230, 45)),
                       onPressed: () {
-                        final currentDate = DateTime.now();
-                        final formattedDate = DateFormat('yyyy-MM-dd HH:mm:ss')
-                            .format(currentDate);
+                        _onclickitem(_currentSliderValue.round().toString());
                         //_currentSliderValue.round().toString()
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const Add()));
+                                builder: (context) => const Add(value: 1)));
                       },
                       child: const Text('Validate',
                           style: TextStyle(fontSize: 25)),
@@ -87,6 +88,18 @@ class _InsulineState extends State<Insuline> {
                   ]))
             ],
           )),
+    );
+  }
+
+  Future<void> _onclickitem(String s) async {
+    final response = await http.post(
+      Uri.parse('http://192.168.4.107:5002/post-insul'),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: jsonEncode({
+        'InsulSug': s,
+      }),
     );
   }
 }

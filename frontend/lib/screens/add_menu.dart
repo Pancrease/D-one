@@ -22,7 +22,8 @@ String generateRandomString(int len) {
 }
 
 class Add extends StatefulWidget {
-  const Add({super.key});
+  final double? value;
+  const Add({Key? key, this.value}) : super(key: key);
 
   @override
   State<Add> createState() => _AddState();
@@ -30,8 +31,15 @@ class Add extends StatefulWidget {
 
 class _AddState extends State<Add> {
   int pos0 = 0;
-  int pos1 = 1;
-  int current = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.value != null) {
+      pos0 = widget.value!.toInt();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -189,12 +197,12 @@ class _AddState extends State<Add> {
             ),
             Container(
                 alignment: Alignment.center,
-                margin: const EdgeInsets.only(top: 480),
+                margin: const EdgeInsets.only(top: 400),
                 child: ListView.builder(
                     itemCount: 1,
                     itemBuilder: (context, index) {
                       return Container(
-                          child: pos1 == index
+                          child: pos0 == index
                               ? OutlinedButton(
                                   onPressed: () {},
                                   child: Text('HOLD'),

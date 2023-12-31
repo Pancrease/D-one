@@ -12,6 +12,8 @@ import 'package:flutter_application_1/screens/solutions/warning.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'dart:math';
 import 'package:intl/intl.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class Bloodtest extends StatefulWidget {
   const Bloodtest({super.key});
@@ -153,23 +155,24 @@ class BloodtestState extends State<Bloodtest> {
                     style: ElevatedButton.styleFrom(
                         fixedSize: const Size(230, 45)),
                     onPressed: () {
-                      final currentDate = DateTime.now();
-                      final formattedDate =
-                          DateFormat('yyyy-MM-dd HH:mm:ss').format(currentDate);
-                      //double.parse(blood)
                       var value = blood;
                       if (double.parse(value) >= 160) {
+                        _onclickitem(blood.toString(),'High');
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const Correction()));
                       } else if (double.parse(value) > 140 &&
                           double.parse(value) < 160) {
+                        _onclickitem(blood.toString(),'Medium');
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const Warning()));
                       } else if (double.parse(value) < 140) {
+                        _onclickitem(
+                          blood.toString(),"Low"
+                        );
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -183,6 +186,19 @@ class BloodtestState extends State<Bloodtest> {
           ],
         ),
       ),
+    );
+  }
+
+  Future<void> _onclickitem(String s, d) async {
+    final response = await http.post(
+      Uri.parse('http://192.168.4.107:5002/post-sugar'),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: jsonEncode({
+        'BloodSugar': s,
+        'desc': d,
+      }),
     );
   }
 }

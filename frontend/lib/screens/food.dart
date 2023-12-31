@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/add_menu.dart';
 import 'package:flutter_application_1/screens/bloodtest.dart';
 import 'package:flutter_application_1/screens/yum.dart';
 import 'package:http/http.dart' as http;
@@ -94,14 +94,19 @@ class _FoodState extends State<Food> {
 
   List<FoodItem> foodItems = [];
   Future<void> _onclickitem(String s) async {
-     final response = await http.post(
-      Uri.parse(
-          'localhost:8000/food'),
-      body: {
-          'food': s,  
-      }
+    final response = await http.post(
+      Uri.parse('http://192.168.4.107:5002/post-food'),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: jsonEncode({
+        'food': s,
+      }),
     );
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const Add()));
   }
+
   Future<void> _onSearchSubmitted() async {
     final searchValue = _editingController.text.trim();
     if (searchValue.isNotEmpty) {

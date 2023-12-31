@@ -64,7 +64,7 @@ class _PredictionSugarState extends State<PredictionSugar> {
                         child: Text(
                           'Your blood sugar will be high in $timeprediction hours',
                           style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 17,
                               fontWeight: FontWeight.bold,
                               color: Color.fromRGBO(4, 64, 110, 1)),
                         ),

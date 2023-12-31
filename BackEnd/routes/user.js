@@ -49,6 +49,6 @@ router.get("/profile", Isauth, (req, res) => {
   });
 });
 router.get("/sign-out", Isauth, SignOut);
-router.get("/arakoulci")
+router.get("/arakoulci");
 
 module.exports = router;
