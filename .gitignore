@@ -70,3 +70,5 @@
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 /BackEnd/.env
 /frontend/build
+/BackEnd/node_modules
+/frontend/.flutter-plugins-dependencies
