@@ -95,7 +95,7 @@ class _FoodState extends State<Food> {
   List<FoodItem> foodItems = [];
   Future<void> _onclickitem(String s) async {
     final response = await http.post(
-      Uri.parse('http://192.168.4.107:5002/post-food'),
+      Uri.parse('http://192.168.1.102:5002/post-food'),
       headers: {
         'Content-Type': 'application/json',
       },

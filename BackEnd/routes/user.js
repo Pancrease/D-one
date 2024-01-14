@@ -26,7 +26,12 @@ const fileFilter = (req, file, cb) => {
 const uploads = multer({ storage, fileFilter });
 
 router.post("/creat-user", ValidateUserSignup, UserValidation, creatUser);
-router.post("/sign-in", SigninValidation, UserValidation, UserSignin);
+router.post(
+  "/sign-in",
+  SigninValidation,
+  UserValidation,
+  UserSignin
+);
 router.post(
   "/upload-profile",
   Isauth,
@@ -49,6 +54,5 @@ router.get("/profile", Isauth, (req, res) => {
   });
 });
 router.get("/sign-out", Isauth, SignOut);
-router.get("/arakoulci");
 
 module.exports = router;

@@ -23,11 +23,11 @@ class _drawerState extends State<drawer> {
           const UserAccountsDrawerHeader(
             decoration: BoxDecoration(
               color: Color.fromARGB(255, 8, 132, 204),
-              image: DecorationImage(
-                image: NetworkImage(
-                  "https://1.cms.s81c.com/sites/default/files/styles/ibm_cloud_wide_background/public/2020-10-27/Learn%20Leadspace%203.jpg?itok=TA5pjk1g",
-                ),
-              ),
+              // image: DecorationImage(
+              //   image: NetworkImage(
+              //     "https://1.cms.s81c.com/sites/default/files/styles/ibm_cloud_wide_background/public/2020-10-27/Learn%20Leadspace%203.jpg?itok=TA5pjk1g",
+              //   ),
+              // ),
             ),
             accountName: Text(
               "Octaros",
