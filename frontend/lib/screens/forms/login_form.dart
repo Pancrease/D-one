@@ -1,3 +1,5 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/menu.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -207,12 +209,13 @@ class _LoginFormState extends State<LoginForm> {
                             if (_numberForm.currentState!.validate()) {
                               msge = msg.text;
                               msgpasse = msgpass.text;
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const Menu(),
-                                ),
-                              );
+                              _onclickitem(msge, msgpasse);
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //     builder: (context) => const Menu(),
+                              //   ),
+                              // );
                             }
                           },
                           icon: const Icon(
@@ -339,7 +342,8 @@ class _LoginFormState extends State<LoginForm> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => const UploadImgPage(),
+                                        builder: (context) =>
+                                            const UploadImgPage(),
                                       ),
                                     );
                                   },
@@ -366,5 +370,30 @@ class _LoginFormState extends State<LoginForm> {
         ),
       ),
     );
+  }
+
+  Future<void> _onclickitem(String email, String pass) async {
+    final response = await http.post(
+      Uri.parse('http://192.168.1.102:5002/sign-in'),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: jsonEncode({
+        'Email': email,
+        'Password': pass,
+      }),
+    );
+    if (response.body.contains("true")) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const Menu(),
+        ),
+      );
+    } else {
+      setState(() {
+        _isVisible = false;
+      });
+    }
   }
 }

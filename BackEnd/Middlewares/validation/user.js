@@ -31,7 +31,7 @@ exports.ValidateUserSignup = [
 ];
 
 exports.UserValidation = (req, res, next) => {
-  // console.log(validationResult(req));
+  console.log(validationResult(req));
   const result = validationResult(req).array();
   if (!result.length) return next();
 
