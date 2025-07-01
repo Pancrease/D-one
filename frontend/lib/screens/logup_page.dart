@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/background/BackgroundLogin.dart';
+import 'package:flutter_application_1/screens/background/background_login.dart';
 import 'forms/logupform.dart';
 
 class LogupPage extends StatefulWidget {

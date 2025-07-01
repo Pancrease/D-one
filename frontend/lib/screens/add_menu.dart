@@ -1,16 +1,16 @@
 // ignore_for_file: sort_child_properties_last
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Widgets/appbar.dart';
-import 'package:flutter_application_1/Widgets/back_button.dart';
-import 'package:flutter_application_1/Widgets/bottombar2.dart';
-import 'package:flutter_application_1/Widgets/drawer.dart';
-import 'package:flutter_application_1/Widgets/loading.dart';
-import 'package:flutter_application_1/screens/bloodtest.dart';
+import 'package:flutter_application_1/widgets/appbar.dart';
+import 'package:flutter_application_1/widgets/back_button.dart';
+import 'package:flutter_application_1/widgets/bottombar2.dart';
+import 'package:flutter_application_1/widgets/drawer.dart';
+import 'package:flutter_application_1/widgets/loading.dart';
+import 'package:flutter_application_1/screens/blood_test.dart';
 import 'package:flutter_application_1/screens/food.dart';
 import 'package:flutter_application_1/screens/insulin.dart';
 import 'package:flutter_application_1/screens/menu.dart';
-import 'package:flutter_application_1/screens/solutions/Prediction/predictionSugar.dart';
+import 'package:flutter_application_1/screens/solutions/prediction/prediction_sugar.dart';
 import 'dart:math';
 
 import 'package:flutter_application_1/screens/sport.dart';

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_application_1/Widgets/slide.dart';
-import 'package:flutter_application_1/Widgets/slideitem.dart';
-import 'package:flutter_application_1/screens/LoginPage.dart';
+import 'package:flutter_application_1/widgets/slide.dart';
+import 'package:flutter_application_1/widgets/slide_item.dart';
+import 'package:flutter_application_1/screens/login_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Onboarding extends StatefulWidget {

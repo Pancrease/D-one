@@ -1,11 +1,11 @@
 // ignore_for_file: unused_field, prefer_final_fields, unused_local_variable
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Widgets/appbar.dart';
-import 'package:flutter_application_1/Widgets/bottombar2.dart';
-import 'package:flutter_application_1/Widgets/drawer.dart';
-import 'package:flutter_application_1/screens/Menus_Screen/menu1.dart';
-import 'package:flutter_application_1/screens/Menus_Screen/menu2.dart';
+import 'package:flutter_application_1/widgets/appbar.dart';
+import 'package:flutter_application_1/widgets/bottombar2.dart';
+import 'package:flutter_application_1/widgets/drawer.dart';
+import 'package:flutter_application_1/screens/menus_screen/menu1.dart';
+import 'package:flutter_application_1/screens/menus_screen/menu2.dart';
 import 'package:horizontal_center_date_picker/datepicker_controller.dart';
 
 class Menu extends StatefulWidget {

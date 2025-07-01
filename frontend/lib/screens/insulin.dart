@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_application_1/Widgets/appbar.dart';
-import 'package:flutter_application_1/Widgets/back_button.dart';
+import 'package:flutter_application_1/widgets/appbar.dart';
+import 'package:flutter_application_1/widgets/back_button.dart';
 import 'package:flutter_application_1/screens/add_menu.dart';
-import 'package:flutter_application_1/screens/bloodtest.dart';
+import 'package:flutter_application_1/screens/blood_test.dart';
 import 'package:intl/intl.dart';
 import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
