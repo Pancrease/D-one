@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_application_1/Widgets/uploadimageWid.dart';
-import 'package:flutter_application_1/screens/LogupPage.dart';
+import 'package:flutter_application_1/widgets/upload_image_wid.dart';
+import 'package:flutter_application_1/screens/logup_page.dart';
 import 'package:flutter_application_1/screens/forms/logupform.dart';
 import 'package:flutter_application_1/screens/menu.dart';
 import 'package:flutter_application_1/screens/verify.dart';

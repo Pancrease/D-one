@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/add_menu.dart';
 import 'package:flutter_application_1/screens/menu.dart';
-import 'package:flutter_application_1/screens/loginpage.dart';
-import 'package:flutter_application_1/screens/Onboarding.dart';
+import 'package:flutter_application_1/screens/login_page.dart';
+import 'package:flutter_application_1/screens/onboarding.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

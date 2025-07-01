@@ -1,10 +1,10 @@
 // ignore_for_file: unused_import
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_application_1/Widgets/appbar.dart';
-import 'package:flutter_application_1/Widgets/back_button.dart';
-import 'package:flutter_application_1/Widgets/bottombar2.dart';
-import 'package:flutter_application_1/Widgets/drawer.dart';
+import 'package:flutter_application_1/widgets/appbar.dart';
+import 'package:flutter_application_1/widgets/back_button.dart';
+import 'package:flutter_application_1/widgets/bottombar2.dart';
+import 'package:flutter_application_1/widgets/drawer.dart';
 import 'package:flutter_application_1/screens/add_menu.dart';
 import 'package:flutter_application_1/screens/menu.dart';
 import 'package:flutter_application_1/screens/solutions/correction.dart';

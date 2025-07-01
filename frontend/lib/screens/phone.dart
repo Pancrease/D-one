@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fl_country_code_picker/fl_country_code_picker.dart';
-import 'package:flutter_application_1/screens/LogupPage.dart';
+import 'package:flutter_application_1/screens/logup_page.dart';
 import 'package:flutter_application_1/screens/verify.dart';
 
 class MyPhone extends StatefulWidget {

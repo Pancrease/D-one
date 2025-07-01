@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/menu.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'Google_sign_in.dart';
 
 class Google_sign_in extends StatefulWidget {
   const Google_sign_in({super.key});

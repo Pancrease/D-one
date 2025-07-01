@@ -1,11 +1,11 @@
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Widgets/appbar.dart';
-import 'package:flutter_application_1/Widgets/drawer.dart';
-import 'package:flutter_application_1/Widgets/loading.dart';
+import 'package:flutter_application_1/widgets/appbar.dart';
+import 'package:flutter_application_1/widgets/drawer.dart';
+import 'package:flutter_application_1/widgets/loading.dart';
 import 'package:flutter_application_1/screens/menu.dart';
-import 'package:flutter_application_1/screens/solutions/Prediction/predictioninsuline.dart';
+import 'package:flutter_application_1/screens/solutions/prediction/prediction_insuline.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 class Correction extends StatefulWidget {

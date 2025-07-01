@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/menu.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:flutter_application_1/screens/UploadImg.dart';
+import 'package:flutter_application_1/screens/upload_img.dart';
 
 // import 'package:keyboard_visibility/keyboard_visibility.dart';
 

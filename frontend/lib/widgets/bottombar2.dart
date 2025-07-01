@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/add_menu.dart';
-import 'package:flutter_application_1/screens/Setting.dart';
+import 'package:flutter_application_1/screens/setting.dart';
 import 'dart:math';
 
 String generateRandomString(int len) {
